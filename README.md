@@ -4,14 +4,14 @@ reducer for media related changes.
 
 ## export functions
 
-### inject
+### setup
 
-inject will be called at startup without force and creates the store reducer.
+setup will be called at startup automaticaly (without force) and creates the store reducer.
 accepts one argument force (default true)
 
-### remove
+### unset
 
-remove the reducer for cleanup methods and testing
+remove the reducer. for cleanup methods and testing
 
 ### handleChange
 

@@ -1,6 +1,6 @@
 import assert from 'assert';
 import store from '@indlekofer/redux-store';
-import { inject, remove, handleChange, handleChangeAll, REDUCER } from '../src/index';
+import { setup, unset, handleChange, handleChangeAll, REDUCER } from '../src/index';
 
 describe('dispatch', () => {
   var unsubscribe;
@@ -14,23 +14,24 @@ describe('dispatch', () => {
   }
 
   beforeEach(() => {
-    inject();
+    setup();
   });
 
   afterEach(() => {
     unsubscribe();
+    unset();
   });
   
-  it('check dispatch', (done) => {
+  it('check dispatch handleChange', (done) => {
     unsubscribe = store.subscribe(handleChangeTest.bind(null, done, "test1", "test2"));
     handleChange("test1", "test2");
   });
-  it('check dispatch', (done) => {
+  it('check dispatch handleChangeAll', (done) => {
     unsubscribe = store.subscribe(handleChangeTest.bind(null, done, "test1", "test2"));
     handleChangeAll({test1: "test2"});
   });
   it('check dispatch', (done) => {
-    remove();
+    unset();
     unsubscribe = store.subscribe(removeTest.bind(null, done));
     handleChangeAll({test1: "test2"});
   });
