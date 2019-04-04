@@ -555,9 +555,9 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@indlekofer/redux-store@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@indlekofer/redux-store/-/redux-store-1.1.1.tgz#ef8953ef8513dd5e08e96fe906de8a6290b77040"
+"@indlekofer/redux-store@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@indlekofer/redux-store/-/redux-store-1.2.0.tgz#4f853a766c9a8fbe831b6ba0dff7558294d34dd2"
   dependencies:
     redux "^4.0.1"
     redux-thunk "^2.2.0"

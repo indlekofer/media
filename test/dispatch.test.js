@@ -4,11 +4,11 @@ import { setup, unset, handleChange, handleChangeAll, REDUCER } from '../src/ind
 
 describe('dispatch', () => {
   var unsubscribe;
-  function handleChangeTest(done, c, key, value) {
+  const handleChangeTest = (done, key, value) => {
     assert.equal(value, store.getState()[REDUCER].get(key));
     done();
   }
-  function removeTest(done, c) {
+  const removeTest = (done) => {
     assert.equal(typeof store.getState()[REDUCER] === 'undefined', true);
     done();
   }

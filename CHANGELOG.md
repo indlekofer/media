@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## 1.2.3 (2019-04-04)
+* incresed redux-store version dependency
+* test variables
+
 ## 1.2.0 (2019-03-30)
 
 * added more tests

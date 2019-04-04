@@ -23,7 +23,7 @@ Object.defineProperty(exports, "REDUCER", {
 });
 exports.handleChangeAll = exports.handleChange = exports.unset = exports.setup = void 0;
 
-var _reduxStore = _interopRequireDefault(require("@indlekofer/redux-store"));
+var _reduxStore = _interopRequireWildcard(require("@indlekofer/redux-store"));
 
 var _constants = require("./constants");
 
@@ -31,16 +31,17 @@ var _reducer = _interopRequireDefault(require("./reducer"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
 var setup = function setup() {
   var force = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
-  _reduxStore.default.inject(_constants.REDUCER, _reducer.default, force);
+  (0, _reduxStore.injectReducer)(_reducer.default, _constants.REDUCER, force);
 };
 
 exports.setup = setup;
 
 var unset = function unset() {
-  _reduxStore.default.remove(_constants.REDUCER);
+  (0, _reduxStore.removeReducer)(_constants.REDUCER);
 };
 
 exports.unset = unset;
@@ -60,7 +61,7 @@ exports.handleChange = handleChange;
 
 var handleChangeAll = function handleChangeAll(value) {
   _reduxStore.default.dispatch({
-    type: _constants.TYPE_CHANGE,
+    type: _constants.TYPE_CHANGE_ALL,
     payload: value
   });
 };
