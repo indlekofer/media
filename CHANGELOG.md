@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+* added eslint
+
 ## 1.2.3 (2019-04-04)
 * incresed redux-store version dependency
 * test variables
