@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## 1.2.4 (2021-02-14)
+* dependencies updated
 * added eslint
 
 ## 1.2.3 (2019-04-04)
